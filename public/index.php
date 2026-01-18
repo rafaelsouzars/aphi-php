@@ -22,6 +22,22 @@ $app->get('/consultar/usuario', function () {
 	echo "Página de consulta de usuários";
 });
 
+$app->post('/login', function () {
+	echo "Autenticação do usuário";
+});
+
+$app->put('/modificar', function () {
+	echo "Isso é um put";
+});
+
+$app->patch('/patch', function () {
+	echo "Isso é um patch";
+});
+
+$app->delete('/excluir', function() {
+	echo "Tchau backup.";
+});
+
 $app->run();
 
 ?>
