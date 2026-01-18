@@ -5,7 +5,7 @@
 	* Author: @rafaelsouzars
 */
 
-namespace src\Interfaces;
+namespace Aphi\Classes;
 
 class MessagesBox {
 	

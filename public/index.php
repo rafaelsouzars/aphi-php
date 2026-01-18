@@ -5,39 +5,43 @@
 	Author: @rafaelsouzars
 */
 
-require_once '../src/App.php';
-require_once '../src/Interfaces/MessagesBox.php';
+require_once '../src/Api.php';
+require_once '../src/Classes/MessagesBox.php';
 
-use src\App;
-use src\Interfaces\MessagesBox;
+use Aphi\Api;
+use Aphi\Classes\MessagesBox;
 
-$app = new App(); // Instancia da classe App()
+$api = Api::CreateAPI(); // Instancia da classe Api()
 
 // Endpoint da raiz do server '/'
-$app->get('/', function () {
+$api->get('/', function ($request) {
 	MessagesBox::alert("Home page");
+	var_dump($request->getQuerys());
 });
 
-$app->get('/consultar/usuario', function () {
+$api->get('/consultar/usuario', function ($request) {
 	echo "Página de consulta de usuários";
 });
 
-$app->post('/login', function () {
-	echo "Autenticação do usuário";
+$api->post('/login', function ($request) {
+	echo $request->getJson();
+	var_dump($request->getParams());
 });
 
-$app->put('/modificar', function () {
-	echo "Isso é um put";
+$api->put('/modificar', function ($request) {
+	echo "Isso é um put. <br>";
+	echo "Request: " . $request->getJson();
 });
 
-$app->patch('/patch', function () {
+$api->patch('/patch', function () {
 	echo "Isso é um patch";
 });
 
-$app->delete('/excluir', function() {
+$api->delete('/excluir', function($request) {
 	echo "Tchau backup.";
+	var_dump($request);
 });
 
-$app->run();
+$api->run();
 
 ?>
