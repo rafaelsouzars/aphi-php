@@ -19,8 +19,11 @@ $api->get('/', function ($request) {
 	var_dump($request->getQuerys());
 });
 
-$api->get('/consultar/usuario', function ($request) {
-	echo "Página de consulta de usuários";
+$api->get('/consultar/usuario', function ($request, $response) {
+	//echo "Página de consulta de usuários. <br>";
+	//$response->setJson([ 'Mensagem' => 'Consulta de usuários']);
+	//$response->setJson([]);
+	$response->setDocument('');
 });
 
 $api->post('/login', function ($request) {
