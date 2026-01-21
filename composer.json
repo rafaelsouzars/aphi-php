@@ -1,0 +1,27 @@
+{
+    "name": "rafsouza/aphi-php",
+    "description": "Mini REST API framework for study and testing.",
+    "type": "library",    
+    "version": "1.0.0",
+	"another-vendor/package": "1.0.0",
+    "keywords": ["aphi","aphi-php","api"],
+    "homepage": "https://github.com/rafaelsouzars/aphi-php",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Rafsouza\\AphiPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "rafaelsouzars",
+            "email": "rafael21.santos@hotmail.com",
+			"homepage": "https://rafaelsouzars.github.io",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.4"
+    }
+}
