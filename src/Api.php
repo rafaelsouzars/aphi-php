@@ -8,7 +8,10 @@
 namespace Aphi;
 
 require __DIR__ . '/Classes/Http/Request.php';
+require __DIR__ . '/Classes/Http/Response.php';
+
 use Aphi\Classes\Http\Request;
+use Aphi\Classes\Http\Response;
 
 class Api
 {
@@ -165,7 +168,7 @@ class Api
 				//$this->executeEndPointCallback($path);
 				if($_SERVER['REQUEST_METHOD'] === 'GET' || $_SERVER['REQUEST_METHOD'] === 'DELETE')
 				{
-					
+					$res = new Response();
 					/*$request = [];
 					if(!empty($_GET)) // empty($array) Verifica se o array esta vazio
 					{						
@@ -176,7 +179,7 @@ class Api
 							//var_dump($request);
 						}						
 					}*/
-					$this->executeEndPointCallback($path)(new Request());
+					$this->executeEndPointCallback($path)(new Request(), new Response());
 				}
 				else if($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'PUT' || $_SERVER['REQUEST_METHOD'] === 'PATCH')
 				{
